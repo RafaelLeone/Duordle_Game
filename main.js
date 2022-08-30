@@ -4,9 +4,17 @@ var app = new Vue({
         numQuadrado: 0,
         counter: 0,
         contadorDeBackspace: 0,
+        chute: [],
+        chuteFinal: undefined,
+        palavraDoDia: 'CALVO',
     },
     methods: {
         tecla(letra){
+            if (this.numQuadrado >= 31){
+                console.log('cabô')
+                return
+            }
+
             // Lógica do ENTER:
             if (letra == 'ENTER' && this.numQuadrado % 5 == 0 && this.numQuadrado > 0 && this.contadorDeBackspace > 0) {
                 console.log(this.numQuadrado)
@@ -14,12 +22,22 @@ var app = new Vue({
                 ++this.counter
                 this.contadorDeBackspace = 0
                 console.log(this.numQuadrado)
+                this.chuteFinal = this.chute.join('')
+                console.log(this.chuteFinal)
+                if (this.chuteFinal == this.palavraDoDia){
+                    this.numQuadrado = 31
+                    console.log('Parabains')
+                } else {
+                    this.chute = []
+                    console.log('errrou')
+                }
                 return
 
             // Lógica do backspace:
             } else if (letra == '⌫' && (this.contadorDeBackspace > 0)){
                 quadradoAtual = document.getElementById(`quadrado${this.numQuadrado}`)
                 quadradoAtual.textContent = ''
+                this.chute.pop()
                 --this.contadorDeBackspace
                 --this.numQuadrado
                 console.log(this.numQuadrado)
@@ -41,8 +59,10 @@ var app = new Vue({
                 quadradoAtual = document.getElementById(`quadrado${this.numQuadrado}`)
                 console.log(this.numQuadrado)
                 quadradoAtual.textContent = letra
+                this.chute.push(letra)
             }
             console.log("backs restantes = " + this.contadorDeBackspace)
+            console.log(this.chute)
         }
     },
 })
