@@ -6,94 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wordle</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-    <div class="all">
+    <div id="app" class="all">
         <h1 id="title">Wordle</h1>
 
         <div class="tabuleiro">
-            <div class="escrito">W</div>
-            <div class="escrito">O</div>
-            <div class="escrito">R</div>
-            <div class="escrito-certo">L</div>
-            <div class="escrito">D</div>
+            <div id="quadrado1" class="quadrado"></div>
+            <div id="quadrado2" class="quadrado"></div>
+            <div id="quadrado3" class="quadrado"></div>
+            <div id="quadrado4" class="quadrado"></div>
+            <div id="quadrado5" class="quadrado"></div> 
         </div>
 
         <div class="tabuleiro">
-            <div class="escrito-lugar">A</div>
-            <div class="escrito">P</div>
-            <div class="escrito">P</div>
-            <div class="escrito-certo">L</div>
-            <div class="escrito">E</div>
+            <div id="quadrado6" class="quadrado"></div>
+            <div id="quadrado7" class="quadrado"></div>
+            <div id="quadrado8" class="quadrado"></div>
+            <div id="quadrado9" class="quadrado"></div>
+            <div id="quadrado10" class="quadrado"></div> 
         </div>
 
         <div class="tabuleiro">
-            <div class="escrito-novo">F</div>
-            <div class="escrito-novo">A</div>
-            <div class="escrito-novo">U</div>
-            <div class="escrito-novo">L</div>
-            <div class="escrito-novo"></div>
+            <div id="quadrado11" class="quadrado"></div>
+            <div id="quadrado12" class="quadrado"></div>
+            <div id="quadrado13" class="quadrado"></div>
+            <div id="quadrado14" class="quadrado"></div>
+            <div id="quadrado15" class="quadrado"></div> 
         </div>
 
         <div class="tabuleiro">
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado"></div> 
+            <div id="quadrado16" class="quadrado"></div>
+            <div id="quadrado17" class="quadrado"></div>
+            <div id="quadrado18" class="quadrado"></div>
+            <div id="quadrado19" class="quadrado"></div>
+            <div id="quadrado20" class="quadrado"></div> 
         </div>
 
         <div class="tabuleiro">
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
+            <div id="quadrado21" class="quadrado"></div>
+            <div id="quadrado22" class="quadrado"></div>
+            <div id="quadrado23" class="quadrado"></div>
+            <div id="quadrado24" class="quadrado"></div>
+            <div id="quadrado25" class="quadrado"></div>
         </div>
 
         <div class="tabuleiro">
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado"></div>
-            <div class="quadrado"></div> 
+            <div id="quadrado26" class="quadrado"></div>
+            <div id="quadrado27" class="quadrado"></div>
+            <div id="quadrado28" class="quadrado"></div>
+            <div id="quadrado29" class="quadrado"></div>
+            <div id="quadrado30" class="quadrado"></div> 
         </div>
 
         <div class="teclado">
-            <button class="tecla">Q</button>
-            <button class="tecla" id="tecla-usada">W</button>
-            <button class="tecla" id="tecla-usada">E</button>
-            <button class="tecla" id="tecla-usada">R</button>
-            <button class="tecla">T</button>
-            <button class="tecla">Y</button>
-            <button class="tecla">U</button>
-            <button class="tecla">I</button>
-            <button class="tecla" id="tecla-usada">O</button>
-            <button class="tecla" id="tecla-usada">P</button>
+            <button @click="tecla('Q')" class="tecla">Q</button>
+            <button @click="tecla('W')" class="tecla">W</button>
+            <button @click="tecla('E')" class="tecla">E</button>
+            <button @click="tecla('R')" class="tecla">R</button>
+            <button @click="tecla('T')" class="tecla">T</button>
+            <button @click="tecla('Y')" class="tecla">Y</button>
+            <button @click="tecla('U')" class="tecla">U</button>
+            <button @click="tecla('I')" class="tecla">I</button>
+            <button @click="tecla('O')" class="tecla">O</button>
+            <button @click="tecla('P')" class="tecla">P</button>
         </div>
 
         <div class="teclado">
-            <button class="tecla" id="tecla-lugar">A</button>
-            <button class="tecla">S</button>
-            <button class="tecla" id="tecla-usada">D</button>
-            <button class="tecla">F</button>
-            <button class="tecla">G</button>
-            <button class="tecla">H</button>
-            <button class="tecla">J</button>
-            <button class="tecla">K</button>
-            <button class="tecla" id="tecla-certa">L</button>
+            <button @click="tecla('A')" class="tecla">A</button>
+            <button @click="tecla('S')" class="tecla">S</button>
+            <button @click="tecla('D')" class="tecla">D</button>
+            <button @click="tecla('F')" class="tecla">F</button>
+            <button @click="tecla('G')" class="tecla">G</button>
+            <button @click="tecla('H')" class="tecla">H</button>
+            <button @click="tecla('J')" class="tecla">J</button>
+            <button @click="tecla('K')" class="tecla">K</button>
+            <button @click="tecla('L')" class="tecla">L</button>
         </div>
 
         <div class="teclado">
-            <button id="enter">ENTER</button>
-            <button class="tecla">Z</button>
-            <button class="tecla">X</button>
-            <button class="tecla">C</button>
-            <button class="tecla">V</button>
-            <button class="tecla">B</button>
-            <button class="tecla">N</button>
-            <button class="tecla">M</button>
-            <button id="backspace">⌫</button>
+            <!-- <button id="enter">ENTER</button> -->
+            <button @click="tecla('Z')" class="tecla">Z</button>
+            <button @click="tecla('X')" class="tecla">X</button>
+            <button @click="tecla('C')" class="tecla">C</button>
+            <button @click="tecla('V')" class="tecla">V</button>
+            <button @click="tecla('B')" class="tecla">B</button>
+            <button @click="tecla('N')" class="tecla">N</button>
+            <button @click="tecla('M')" class="tecla">M</button>
+            <button @click="tecla('⌫')" id="backspace">⌫</button>
         </div>
 
         <div class="config">
@@ -116,5 +117,6 @@
 
         </div>
     </div>
+    <script src="./main.js"></script>
 </body>
 </html>
