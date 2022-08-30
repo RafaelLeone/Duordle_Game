@@ -1,3 +1,3 @@
-# Link da página do d4-wordle-rafael-leone>
+# Link da página do wordle-vuejs>
 
-https://rafaelleone.github.io/d4-wordle-rafael-leone/
+placeholder
