@@ -7,12 +7,14 @@ var app = new Vue({
     },
     methods: {
         tecla(letra){
-            if (letra == 'ENTER' && this.numQuadrado % 5 == 0) {
+            if (letra == 'ENTER' && this.numQuadrado % 5 == 0 && this.numQuadrado > 0 && this.contadorDeBackspace > 0) {
                 console.log(this.numQuadrado)
                 ++this.numQuadrado
                 ++this.counter
                 this.contadorDeBackspace = 0
                 console.log(this.numQuadrado)
+                return
+            } else if (letra == 'ENTER'){
                 return
             } else if (letra == '⌫' && (this.contadorDeBackspace > 0)){
                 quadradoAtual = document.getElementById(`quadrado${this.numQuadrado}`)

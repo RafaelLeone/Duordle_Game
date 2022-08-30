@@ -86,7 +86,7 @@
         </div>
 
         <div class="teclado">
-            <button v-show="numQuadrado % 5 == 0 && numQuadrado > 0 && contadorDeBackspace > 0" @click="tecla('ENTER')" id="enter">ENTER</button>
+            <button @click="tecla('ENTER')" id="enter">ENTER</button>
             <button @click="tecla('Z')" class="tecla">Z</button>
             <button @click="tecla('X')" class="tecla">X</button>
             <button @click="tecla('C')" class="tecla">C</button>
