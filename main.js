@@ -7,6 +7,7 @@ var app = new Vue({
     },
     methods: {
         tecla(letra){
+            // Lógica do ENTER:
             if (letra == 'ENTER' && this.numQuadrado % 5 == 0 && this.numQuadrado > 0 && this.contadorDeBackspace > 0) {
                 console.log(this.numQuadrado)
                 ++this.numQuadrado
@@ -14,22 +15,20 @@ var app = new Vue({
                 this.contadorDeBackspace = 0
                 console.log(this.numQuadrado)
                 return
-            } else if (letra == 'ENTER'){
-                return
+
+            // Lógica do backspace:
             } else if (letra == '⌫' && (this.contadorDeBackspace > 0)){
                 quadradoAtual = document.getElementById(`quadrado${this.numQuadrado}`)
                 quadradoAtual.textContent = ''
-                
                 --this.contadorDeBackspace
                 --this.numQuadrado
                 console.log(this.numQuadrado)
 
+            // Lógica pra não colocar mais letra depois da quinta:
             } else if (this.numQuadrado % 5 == 0 && this.numQuadrado > 0 && this.contadorDeBackspace > 0){
                 return
-            } else if ((letra == '⌫' && this.contadorDeBackspace == 5) || (letra == '⌫' && this.contadorDeBackspace == 0)){
-                console.log('entrei')
-                console.log(this.contadorDeBackspace)
-                return
+
+            // Lógica das letras:
             } else {
                 if (this.counter > 0){
                     --this.numQuadrado
@@ -43,7 +42,7 @@ var app = new Vue({
                 console.log(this.numQuadrado)
                 quadradoAtual.textContent = letra
             }
-            console.log("back = " + this.contadorDeBackspace)
+            console.log("backs restantes = " + this.contadorDeBackspace)
         }
     },
 })
