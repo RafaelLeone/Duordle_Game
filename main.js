@@ -41,16 +41,17 @@ var app = new Vue({
                         this.letrasRestantesDoChute.push(this.chute[i])
                     }
                 }
-                console.log(this.letrasRestantes)
-                console.log(this.letrasRestantesDoChute)
-
-
+                
                 //Lógica do amarelo:
                 for (i=0; i<this.letrasRestantes.length; i++){
                     if (this.letrasRestantes.includes(this.letrasRestantesDoChute[i])){
-                        this.letrasRestantes.splice(i-1, 1)
-                        console.log(this.letrasRestantes)
-                        console.log('entrei')
+                        for (j=0; j<this.letrasRestantes; j++){
+                            if (this.letrasRestantes[j] == this.letrasRestantesDoChute[i]){
+                                this.letrasRestantes.splice(j, 1)
+                                console.log(this.letrasRestantes)
+                                console.log('entrei')
+                            }
+                        }
                     }
                 }
 
