@@ -61,40 +61,40 @@
         </div>
 
         <div class="teclado">
-            <button @click="tecla('Q')" class="tecla">Q</button>
-            <button @click="tecla('W')" class="tecla">W</button>
-            <button @click="tecla('E')" class="tecla">E</button>
-            <button @click="tecla('R')" class="tecla">R</button>
-            <button @click="tecla('T')" class="tecla">T</button>
-            <button @click="tecla('Y')" class="tecla">Y</button>
-            <button @click="tecla('U')" class="tecla">U</button>
-            <button @click="tecla('I')" class="tecla">I</button>
-            <button @click="tecla('O')" class="tecla">O</button>
-            <button @click="tecla('P')" class="tecla">P</button>
+            <button @click="tecla('Q')" id="Q" class="tecla">Q</button>
+            <button @click="tecla('W')" id="W" class="tecla">W</button>
+            <button @click="tecla('E')" id="E" class="tecla">E</button>
+            <button @click="tecla('R')" id="R" class="tecla">R</button>
+            <button @click="tecla('T')" id="T" class="tecla">T</button>
+            <button @click="tecla('Y')" id="Y" class="tecla">Y</button>
+            <button @click="tecla('U')" id="U" class="tecla">U</button>
+            <button @click="tecla('I')" id="I" class="tecla">I</button>
+            <button @click="tecla('O')" id="O" class="tecla">O</button>
+            <button @click="tecla('P')" id="P" class="tecla">P</button>
         </div>
 
         <div class="teclado">
-            <button @click="tecla('A')" class="tecla">A</button>
-            <button @click="tecla('S')" class="tecla">S</button>
-            <button @click="tecla('D')" class="tecla">D</button>
-            <button @click="tecla('F')" class="tecla">F</button>
-            <button @click="tecla('G')" class="tecla">G</button>
-            <button @click="tecla('H')" class="tecla">H</button>
-            <button @click="tecla('J')" class="tecla">J</button>
-            <button @click="tecla('K')" class="tecla">K</button>
-            <button @click="tecla('L')" class="tecla">L</button>
+            <button @click="tecla('A')" id="A" class="tecla">A</button>
+            <button @click="tecla('S')" id="S" class="tecla">S</button>
+            <button @click="tecla('D')" id="D" class="tecla">D</button>
+            <button @click="tecla('F')" id="F" class="tecla">F</button>
+            <button @click="tecla('G')" id="G" class="tecla">G</button>
+            <button @click="tecla('H')" id="H" class="tecla">H</button>
+            <button @click="tecla('J')" id="J" class="tecla">J</button>
+            <button @click="tecla('K')" id="K" class="tecla">K</button>
+            <button @click="tecla('L')" id="L" class="tecla">L</button>
         </div>
 
         <div class="teclado">
             <button v-if="numQuadrado % 5 == 0 && numQuadrado > 0 && contadorDeBackspace > 0" @click="tecla('ENTER')" id="enter">ENTER</button>
             <button v-else id="enter">ENTER</button>
-            <button @click="tecla('Z')" class="tecla">Z</button>
-            <button @click="tecla('X')" class="tecla">X</button>
-            <button @click="tecla('C')" class="tecla">C</button>
-            <button @click="tecla('V')" class="tecla">V</button>
-            <button @click="tecla('B')" class="tecla">B</button>
-            <button @click="tecla('N')" class="tecla">N</button>
-            <button @click="tecla('M')" class="tecla">M</button>
+            <button @click="tecla('Z')" id="Z" class="tecla">Z</button>
+            <button @click="tecla('X')" id="X" class="tecla">X</button>
+            <button @click="tecla('C')" id="C" class="tecla">C</button>
+            <button @click="tecla('V')" id="V" class="tecla">V</button>
+            <button @click="tecla('B')" id="B" class="tecla">B</button>
+            <button @click="tecla('N')" id="N" class="tecla">N</button>
+            <button @click="tecla('M')" id="M" class="tecla">M</button>
             <button v-if="numQuadrado > 0 && contadorDeBackspace > 0" @click="tecla('⌫')" id="backspace">⌫</button>
             <button v-else id="backspace">⌫</button>
         </div>

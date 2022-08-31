@@ -12,6 +12,7 @@ var app = new Vue({
         letrasRestantesDoChute: [],
         quadradosErrados: [],
         contador: 0,
+        teclasCertas: [],
     },
     methods: {
         tecla(letra){
@@ -71,6 +72,8 @@ var app = new Vue({
                 this.contador += 5
                 this.quadradosErrados = []
 
+                this.pintaTecla(this.chute)
+
                 //Lógica do chute:
                 this.chuteFinal = this.chute.join('')
                 console.log(this.chuteFinal)
@@ -113,6 +116,20 @@ var app = new Vue({
             }
             console.log("backs restantes = " + this.contadorDeBackspace)
             console.log(this.chute)
+        },
+        pintaTecla(letras){
+            for (indice in letras){
+                tecla = document.getElementById(letras[indice])
+                if(this.palavraDoDia[indice] == letras[indice]){
+                    tecla.style = 'background: green'
+                    this.teclasCertas.push(letras[indice])
+                } else if (this.palavraDoDia.includes(letras[indice]) && !this.teclasCertas.includes(letras[indice])){
+                    tecla.style = 'background: yellow'
+                } else if (!this.teclasCertas.includes(letras[indice])){
+                    tecla.style = 'background: grey'
+                }
+            }
+            console.log(this.teclasCertas)
         }
     },
 })
