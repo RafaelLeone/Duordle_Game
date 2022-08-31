@@ -48,18 +48,23 @@ var app = new Vue({
                 console.log(this.letrasRestantes)
                 console.log(this.letrasRestantesDoChute)
 
-                //Lógica do amarelo em andamento:
+                //Lógica do amarelo:
                 for(i=0; i<this.quadradosErrados.length; i++){
                     for (j=0; j<this.letrasRestantes.length; j++){
                         if (this.letrasRestantes[i] == this.letrasRestantesDoChute[j]){
                             quadradoASerAmarelado = document.getElementById(`quadrado${this.quadradosErrados[j]}`)
                             quadradoASerAmarelado.style= 'background: yellow'
-                            this.letrasRestantes.splice(i-1, 1)
-                            this.letrasRestantesDoChute.splice(j-1, 1)
+                            this.letrasRestantes.splice(i, '*')
+                            this.letrasRestantesDoChute.splice(j, '*')
+                            this.quadradosErrados.splice(j, '*')
+                            console.log(this.quadradosErrados)
+                            console.log(this.letrasRestantes)
+                            console.log(this.letrasRestantesDoChute)
+
+                            break
                         }
                     }
                 }
-                
                 
                 //Reset:
                 this.letrasRestantes = []
