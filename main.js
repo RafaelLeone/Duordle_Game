@@ -7,6 +7,7 @@ var app = new Vue({
         chute: [],
         chuteFinal: undefined,
         palavraDoDia: 'CALVO',
+        contaQuadradosValidados: 1,
     },
     methods: {
         tecla(letra){
@@ -22,6 +23,18 @@ var app = new Vue({
                 ++this.counter
                 this.contadorDeBackspace = 0
                 console.log(this.numQuadrado)
+
+                for (i=0; i<5; i++){
+                    quadradoASerValidado = document.getElementById(`quadrado${this.contaQuadradosValidados}`)
+                    console.log(this.contaQuadradosValidados)
+                    quadradoASerValidado.style = 'background: grey'
+                    ++this.contaQuadradosValidados
+                    console.log(quadradoASerValidado.textContent)
+                    if (quadradoASerValidado.textContent == this.palavraDoDia[i]){
+                        quadradoASerValidado.style = 'background: green'
+                    }
+                }
+
                 this.chuteFinal = this.chute.join('')
                 console.log(this.chuteFinal)
                 if (this.chuteFinal == this.palavraDoDia){
