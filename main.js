@@ -47,7 +47,7 @@ var app = new Vue({
                 //Lógica do amarelo:
                 for (i=0; i<this.letrasRestantes.length; i++){
                     if (this.letrasRestantes.includes(this.letrasRestantesDoChute[i])){
-                        
+                        // mas se eu botar dois L isso não funciona, pq pinta o segundo L :(
                         console.log('entrei')
                     }
                 }
