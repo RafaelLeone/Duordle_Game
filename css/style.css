@@ -31,9 +31,9 @@ button {
 }
 
 .tecla{
-    width: 45px;
-    height: 65px;
-    margin-right: 3px;
+    width: 22px;
+    height: 32px;
+    margin-right: 1px;
 }
 
 .escrito{
@@ -119,14 +119,14 @@ button {
 }
 
 #enter{
-    height: 65px;
-    width: 75px;
-    margin-right: 3px;
+    height: 32px;
+    width: 37px;
+    margin-right: 1px;
 }
 
 #backspace{
-    width: 75px;
-    height: 65px;
+    width: 37px;
+    height: 32px;
 }
 
 .config-img{
