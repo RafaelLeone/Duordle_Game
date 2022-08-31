@@ -70,8 +70,8 @@ var app = new Vue({
                         if (this.letrasRestantes[i] == this.letrasRestantesDoChute[j]){
                             if (this.numQuadrado < 31){
                                 quadradoASerAmarelado = document.getElementById(`quadrado${this.quadradosErrados[j]}`)
+                                quadradoASerAmarelado.style= 'background: yellow'
                             }
-                            quadradoASerAmarelado.style= 'background: yellow'
                             this.letrasRestantes.splice(i, '*')
                             this.letrasRestantesDoChute.splice(j, '*')
                             this.quadradosErrados.splice(j, '*')
@@ -136,13 +136,14 @@ var app = new Vue({
                 ++this.numQuadradoDois
                 if (this.numQuadrado < 31){
                     quadradoAtual = document.getElementById(`quadrado${this.numQuadrado}`)
+                    quadradoAtual.textContent = letra
                 }
                 if (this.numQuadradoDois < 31){
                     quadradoAtualb = document.getElementById(`quadradob${this.numQuadradoDois}`)
+                    quadradoAtualb.textContent = letra
                 }
-                quadradoAtual.textContent = letra
-                quadradoAtualb.textContent = letra
                 this.chute.push(letra)
+                this.chuteDois.push(letra)
             }
         },
         pintaTecla(letras){
