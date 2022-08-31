@@ -11,79 +11,131 @@
 <body>
     <div id="app" class="all">
         <h1 id="title">Wordle</h1>
+        <div class="tabs">
+            <div class="tab1">
+                <div class="tabuleiro">
+                    <div id="quadrado1" class="quadrado"></div>
+                    <div id="quadrado2" class="quadrado"></div>
+                    <div id="quadrado3" class="quadrado"></div>
+                    <div id="quadrado4" class="quadrado"></div>
+                    <div id="quadrado5" class="quadrado"></div> 
+                </div>
 
-        <div class="tabuleiro">
-            <div id="quadrado1" class="quadrado"></div>
-            <div id="quadrado2" class="quadrado"></div>
-            <div id="quadrado3" class="quadrado"></div>
-            <div id="quadrado4" class="quadrado"></div>
-            <div id="quadrado5" class="quadrado"></div> 
+                <div class="tabuleiro">
+                    <div id="quadrado6" class="quadrado"></div>
+                    <div id="quadrado7" class="quadrado"></div>
+                    <div id="quadrado8" class="quadrado"></div>
+                    <div id="quadrado9" class="quadrado"></div>
+                    <div id="quadrado10" class="quadrado"></div> 
+                </div>
+
+                <div class="tabuleiro">
+                    <div id="quadrado11" class="quadrado"></div>
+                    <div id="quadrado12" class="quadrado"></div>
+                    <div id="quadrado13" class="quadrado"></div>
+                    <div id="quadrado14" class="quadrado"></div>
+                    <div id="quadrado15" class="quadrado"></div> 
+                </div>
+
+                <div class="tabuleiro">
+                    <div id="quadrado16" class="quadrado"></div>
+                    <div id="quadrado17" class="quadrado"></div>
+                    <div id="quadrado18" class="quadrado"></div>
+                    <div id="quadrado19" class="quadrado"></div>
+                    <div id="quadrado20" class="quadrado"></div> 
+                </div>
+
+                <div class="tabuleiro">
+                    <div id="quadrado21" class="quadrado"></div>
+                    <div id="quadrado22" class="quadrado"></div>
+                    <div id="quadrado23" class="quadrado"></div>
+                    <div id="quadrado24" class="quadrado"></div>
+                    <div id="quadrado25" class="quadrado"></div>
+                </div>
+
+                <div class="tabuleiro">
+                    <div id="quadrado26" class="quadrado"></div>
+                    <div id="quadrado27" class="quadrado"></div>
+                    <div id="quadrado28" class="quadrado"></div>
+                    <div id="quadrado29" class="quadrado"></div>
+                    <div id="quadrado30" class="quadrado"></div> 
+                </div>
+            </div>
+            <div class="tab2">
+                <div class="tabuleiro">
+                    <div id="quadradob1" class="quadrado"></div>
+                    <div id="quadradob2" class="quadrado"></div>
+                    <div id="quadradob3" class="quadrado"></div>
+                    <div id="quadradob4" class="quadrado"></div>
+                    <div id="quadradob5" class="quadrado"></div> 
+                </div>
+
+                <div class="tabuleiro">
+                    <div id="quadradob6" class="quadrado"></div>
+                    <div id="quadradob7" class="quadrado"></div>
+                    <div id="quadradob8" class="quadrado"></div>
+                    <div id="quadradob9" class="quadrado"></div>
+                    <div id="quadradob10" class="quadrado"></div> 
+                </div>
+
+                <div class="tabuleiro">
+                    <div id="quadradob11" class="quadrado"></div>
+                    <div id="quadradob12" class="quadrado"></div>
+                    <div id="quadradob13" class="quadrado"></div>
+                    <div id="quadradob14" class="quadrado"></div>
+                    <div id="quadradob15" class="quadrado"></div> 
+                </div>
+
+                <div class="tabuleiro">
+                    <div id="quadradob16" class="quadrado"></div>
+                    <div id="quadradob17" class="quadrado"></div>
+                    <div id="quadradob18" class="quadrado"></div>
+                    <div id="quadradob19" class="quadrado"></div>
+                    <div id="quadradob20" class="quadrado"></div> 
+                </div>
+
+                <div class="tabuleiro">
+                    <div id="quadradob21" class="quadrado"></div>
+                    <div id="quadradob22" class="quadrado"></div>
+                    <div id="quadradob23" class="quadrado"></div>
+                    <div id="quadradob24" class="quadrado"></div>
+                    <div id="quadradob25" class="quadrado"></div>
+                </div>
+
+                <div class="tabuleiro">
+                    <div id="quadradob26" class="quadrado"></div>
+                    <div id="quadradob27" class="quadrado"></div>
+                    <div id="quadradob28" class="quadrado"></div>
+                    <div id="quadradob29" class="quadrado"></div>
+                    <div id="quadradob30" class="quadrado"></div> 
+                </div>
+            </div>
         </div>
 
-        <div class="tabuleiro">
-            <div id="quadrado6" class="quadrado"></div>
-            <div id="quadrado7" class="quadrado"></div>
-            <div id="quadrado8" class="quadrado"></div>
-            <div id="quadrado9" class="quadrado"></div>
-            <div id="quadrado10" class="quadrado"></div> 
-        </div>
+            <div class="teclado">
+                <button @click="tecla('Q')" id="Q" class="tecla">Q</button>
+                <button @click="tecla('W')" id="W" class="tecla">W</button>
+                <button @click="tecla('E')" id="E" class="tecla">E</button>
+                <button @click="tecla('R')" id="R" class="tecla">R</button>
+                <button @click="tecla('T')" id="T" class="tecla">T</button>
+                <button @click="tecla('Y')" id="Y" class="tecla">Y</button>
+                <button @click="tecla('U')" id="U" class="tecla">U</button>
+                <button @click="tecla('I')" id="I" class="tecla">I</button>
+                <button @click="tecla('O')" id="O" class="tecla">O</button>
+                <button @click="tecla('P')" id="P" class="tecla">P</button>
+            </div>
 
-        <div class="tabuleiro">
-            <div id="quadrado11" class="quadrado"></div>
-            <div id="quadrado12" class="quadrado"></div>
-            <div id="quadrado13" class="quadrado"></div>
-            <div id="quadrado14" class="quadrado"></div>
-            <div id="quadrado15" class="quadrado"></div> 
-        </div>
-
-        <div class="tabuleiro">
-            <div id="quadrado16" class="quadrado"></div>
-            <div id="quadrado17" class="quadrado"></div>
-            <div id="quadrado18" class="quadrado"></div>
-            <div id="quadrado19" class="quadrado"></div>
-            <div id="quadrado20" class="quadrado"></div> 
-        </div>
-
-        <div class="tabuleiro">
-            <div id="quadrado21" class="quadrado"></div>
-            <div id="quadrado22" class="quadrado"></div>
-            <div id="quadrado23" class="quadrado"></div>
-            <div id="quadrado24" class="quadrado"></div>
-            <div id="quadrado25" class="quadrado"></div>
-        </div>
-
-        <div class="tabuleiro">
-            <div id="quadrado26" class="quadrado"></div>
-            <div id="quadrado27" class="quadrado"></div>
-            <div id="quadrado28" class="quadrado"></div>
-            <div id="quadrado29" class="quadrado"></div>
-            <div id="quadrado30" class="quadrado"></div> 
-        </div>
-
-        <div class="teclado">
-            <button @click="tecla('Q')" id="Q" class="tecla">Q</button>
-            <button @click="tecla('W')" id="W" class="tecla">W</button>
-            <button @click="tecla('E')" id="E" class="tecla">E</button>
-            <button @click="tecla('R')" id="R" class="tecla">R</button>
-            <button @click="tecla('T')" id="T" class="tecla">T</button>
-            <button @click="tecla('Y')" id="Y" class="tecla">Y</button>
-            <button @click="tecla('U')" id="U" class="tecla">U</button>
-            <button @click="tecla('I')" id="I" class="tecla">I</button>
-            <button @click="tecla('O')" id="O" class="tecla">O</button>
-            <button @click="tecla('P')" id="P" class="tecla">P</button>
-        </div>
-
-        <div class="teclado">
-            <button @click="tecla('A')" id="A" class="tecla">A</button>
-            <button @click="tecla('S')" id="S" class="tecla">S</button>
-            <button @click="tecla('D')" id="D" class="tecla">D</button>
-            <button @click="tecla('F')" id="F" class="tecla">F</button>
-            <button @click="tecla('G')" id="G" class="tecla">G</button>
-            <button @click="tecla('H')" id="H" class="tecla">H</button>
-            <button @click="tecla('J')" id="J" class="tecla">J</button>
-            <button @click="tecla('K')" id="K" class="tecla">K</button>
-            <button @click="tecla('L')" id="L" class="tecla">L</button>
-        </div>
+            <div class="teclado">
+                <button @click="tecla('A')" id="A" class="tecla">A</button>
+                <button @click="tecla('S')" id="S" class="tecla">S</button>
+                <button @click="tecla('D')" id="D" class="tecla">D</button>
+                <button @click="tecla('F')" id="F" class="tecla">F</button>
+                <button @click="tecla('G')" id="G" class="tecla">G</button>
+                <button @click="tecla('H')" id="H" class="tecla">H</button>
+                <button @click="tecla('J')" id="J" class="tecla">J</button>
+                <button @click="tecla('K')" id="K" class="tecla">K</button>
+                <button @click="tecla('L')" id="L" class="tecla">L</button>
+            </div>
 
         <div class="teclado">
             <button v-if="numQuadrado % 5 == 0 && numQuadrado > 0 && contadorDeBackspace > 0" @click="tecla('ENTER')" id="enter">ENT</button>

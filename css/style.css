@@ -1,3 +1,9 @@
+.tabs{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+
 button {
     border-style: none;
     border-radius: 4px;
@@ -31,8 +37,8 @@ button {
 }
 
 .tecla{
-    width: 22px;
-    height: 32px;
+    width: 30px;
+    height: 42px;
     margin-right: 1px;
 }
 
@@ -119,14 +125,14 @@ button {
 }
 
 #enter{
-    height: 32px;
-    width: 37px;
+    height: 40px;
+    width: 47px;
     margin-right: 1px;
 }
 
 #backspace{
-    width: 37px;
-    height: 32px;
+    width: 45px;
+    height: 42px;
 }
 
 .config-img{
