@@ -44,10 +44,12 @@ var app = new Vue({
                 console.log(this.letrasRestantes)
                 console.log(this.letrasRestantesDoChute)
 
+
                 //Lógica do amarelo:
                 for (i=0; i<this.letrasRestantes.length; i++){
                     if (this.letrasRestantes.includes(this.letrasRestantesDoChute[i])){
-                        // mas se eu botar dois L isso não funciona, pq pinta o segundo L :(
+                        this.letrasRestantes.splice(i-1, 1)
+                        console.log(this.letrasRestantes)
                         console.log('entrei')
                     }
                 }
