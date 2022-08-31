@@ -10,6 +10,8 @@ var app = new Vue({
         contaQuadradosValidados: 1,
         letrasRestantes: [],
         letrasRestantesDoChute: [],
+        quadradosErrados: [],
+        contador: 0,
     },
     methods: {
         tecla(letra){
@@ -39,25 +41,31 @@ var app = new Vue({
                     } else {
                         this.letrasRestantes.push(this.palavraDoDia[i])
                         this.letrasRestantesDoChute.push(this.chute[i])
+                        this.quadradosErrados.push(i+this.contador+1)
                     }
                 }
-                
-                //Lógica do amarelo:
-                for (i=0; i<this.letrasRestantes.length; i++){
-                    if (this.letrasRestantes.includes(this.letrasRestantesDoChute[i])){
-                        for (j=0; j<this.letrasRestantes; j++){
-                            if (this.letrasRestantes[j] == this.letrasRestantesDoChute[i]){
-                                this.letrasRestantes.splice(j, 1)
-                                console.log(this.letrasRestantes)
-                                console.log('entrei')
-                            }
+                console.log(this.quadradosErrados)
+                console.log(this.letrasRestantes)
+                console.log(this.letrasRestantesDoChute)
+
+                //Lógica do amarelo em andamento:
+                for(i=0; i<this.quadradosErrados.length; i++){
+                    for (j=0; j<this.letrasRestantes.length; j++){
+                        if (this.letrasRestantes[i] == this.letrasRestantesDoChute[j]){
+                            quadradoASerAmarelado = document.getElementById(`quadrado${this.quadradosErrados[j]}`)
+                            quadradoASerAmarelado.style= 'background: yellow'
+                            this.letrasRestantes.splice(i-1, 1)
+                            this.letrasRestantesDoChute.splice(j-1, 1)
                         }
                     }
                 }
-
+                
+                
                 //Reset:
                 this.letrasRestantes = []
                 this.letrasRestantesDoChute = []
+                this.contador += 5
+                this.quadradosErrados = []
 
                 //Lógica do chute:
                 this.chuteFinal = this.chute.join('')
