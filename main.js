@@ -8,6 +8,8 @@ var app = new Vue({
         chuteFinal: undefined,
         palavraDoDia: 'CALVO',
         contaQuadradosValidados: 1,
+        letrasRestantes: [],
+        letrasRestantesDoChute: [],
     },
     methods: {
         tecla(letra){
@@ -24,7 +26,9 @@ var app = new Vue({
                 this.contadorDeBackspace = 0
                 console.log(this.numQuadrado)
 
+                //Lógica do verde
                 for (i=0; i<5; i++){
+                    console.log(this.letrasRestantes[i])
                     quadradoASerValidado = document.getElementById(`quadrado${this.contaQuadradosValidados}`)
                     console.log(this.contaQuadradosValidados)
                     quadradoASerValidado.style = 'background: grey'
@@ -32,9 +36,27 @@ var app = new Vue({
                     console.log(quadradoASerValidado.textContent)
                     if (quadradoASerValidado.textContent == this.palavraDoDia[i]){
                         quadradoASerValidado.style = 'background: green'
+                    } else {
+                        this.letrasRestantes.push(this.palavraDoDia[i])
+                        this.letrasRestantesDoChute.push(this.chute[i])
+                    }
+                }
+                console.log(this.letrasRestantes)
+                console.log(this.letrasRestantesDoChute)
+
+                //Lógica do amarelo:
+                for (i=0; i<this.letrasRestantes.length; i++){
+                    if (this.letrasRestantes.includes(this.letrasRestantesDoChute[i])){
+                        
+                        console.log('entrei')
                     }
                 }
 
+                //Reset:
+                this.letrasRestantes = []
+                this.letrasRestantesDoChute = []
+
+                //Lógica do chute:
                 this.chuteFinal = this.chute.join('')
                 console.log(this.chuteFinal)
                 if (this.chuteFinal == this.palavraDoDia){
