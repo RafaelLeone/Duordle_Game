@@ -6,7 +6,7 @@ var app = new Vue({
         contadorDeBackspace: 0,
         chute: [],
         chuteFinal: undefined,
-        palavraDoDia: 'CALVO',
+        palavraDoDia: 'OSSOS',
         contaQuadradosValidados: 1,
         letrasRestantes: [],
         letrasRestantesDoChute: [],
@@ -60,7 +60,6 @@ var app = new Vue({
                             console.log(this.quadradosErrados)
                             console.log(this.letrasRestantes)
                             console.log(this.letrasRestantesDoChute)
-
                             break
                         }
                     }
