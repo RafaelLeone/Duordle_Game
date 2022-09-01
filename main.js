@@ -79,27 +79,31 @@ var app = new Vue({
                         }
                     }
                 }
-                // for(i=0; i<this.quadradosErradosDois.length; i++){
-                //     for (j=0; j<this.letrasRestantesDois.length; j++){
-                //         if (this.letrasRestantesDois[i] == this.letrasRestantesDoChuteDois[j]){
-                //             if (this.numQuadradoDois < 31){
-                //                 quadradoASerAmareladob = document.getElementById(`quadradob${this.quadradosErrados[j]}`)
-                //                 quadradoASerAmareladob.style= 'background: yellow'
-                //             }
-                //             this.letrasRestantesDois.splice(i, '*')
-                //             this.letrasRestantesDoChuteDois.splice(j, '*')
-                //             this.quadradosErradosDois.splice(j, '*')
-                //             break
-                //         }
-                //     }
-                // }
+                for(i=0; i<this.quadradosErradosDois.length; i++){
+                    for (j=0; j<this.letrasRestantesDois.length; j++){
+                        if (this.letrasRestantesDois[i] == this.letrasRestantesDoChuteDois[j]){
+                            if (this.numQuadradoDois < 31){
+                                quadradoASerAmareladob = document.getElementById(`quadradob${this.quadradosErradosDois[j]}`)
+                                quadradoASerAmareladob.style= 'background: yellow'
+                            }
+                            this.letrasRestantesDois.splice(i, '*')
+                            this.letrasRestantesDoChuteDois.splice(j, '*')
+                            this.quadradosErradosDois.splice(j, '*')
+                            break
+                        }
+                    }
+                }
                 
                 //Reset:
                 this.letrasRestantes = []
                 this.letrasRestantesDoChute = []
-                this.contador += 5
                 this.quadradosErrados = []
-
+                this.letrasRestantesDois = []
+                this.letrasRestantesDoChuteDois = []
+                this.quadradosErradosDois = []
+                this.contador += 5
+                this.contadorDois += 5
+                
                 this.pintaTecla(this.chute)
 
                 //Lógica do chute:
