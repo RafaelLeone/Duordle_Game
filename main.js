@@ -30,7 +30,7 @@ var app = new Vue({
             }
 
             // Lógica do ENTER:
-            if (letra == 'ENTER' && this.numQuadrado % 5 == 0 && this.numQuadrado > 0 && this.contadorDeBackspace > 0) {
+            if (letra == 'FENTER' && this.numQuadrado % 5 == 0 && this.numQuadrado > 0 && this.contadorDeBackspace > 0) {
                 ++this.numQuadrado
                 ++this.numQuadradoDois
                 ++this.counter
@@ -179,4 +179,20 @@ var app = new Vue({
             }
         }
     },
+    created: function () {
+        // `this` aponta para a instância
+        // Add event listener on keyup
+        document.addEventListener('keyup', (event) => {
+            var name = event.key;
+            var code = event.code;
+            // Alert the key name and key code on keydown
+            if ("KeyA" <= code && code <= "KeyZ"){
+                this.tecla(name.toUpperCase())
+            } else if (code == "Enter" && this.numQuadrado % 5 == 0 && this.numQuadrado > 0 && this.contadorDeBackspace > 0){
+                this.tecla('FENTER')
+            } else if (code == "Backspace" && this.contadorDeBackspace > 0){
+                this.tecla('⌫')
+            }
+        });
+    }
 })
