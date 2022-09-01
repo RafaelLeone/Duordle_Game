@@ -1,3 +1,3 @@
-# Link da página do wordle-vuejs>
+## Jogue Duordle:
 
-placeholder
+[Link](https://rafaelleone.github.io/duordle/)
