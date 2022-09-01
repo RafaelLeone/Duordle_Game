@@ -2,6 +2,8 @@
     display: flex;
     text-align: center;
     justify-content: space-around;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 button {
@@ -37,8 +39,8 @@ button {
 }
 
 .tecla{
-    width: 30px;
-    height: 42px;
+    width: 36px;
+    height: 50px;
     margin-right: 1px;
 }
 
@@ -125,14 +127,14 @@ button {
 }
 
 #enter{
-    height: 40px;
-    width: 47px;
+    height: 50px;
+    width: 57px;
     margin-right: 1px;
 }
 
 #backspace{
-    width: 45px;
-    height: 42px;
+    width: 55px;
+    height: 50px;
 }
 
 .config-img{

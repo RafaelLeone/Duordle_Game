@@ -79,6 +79,20 @@ var app = new Vue({
                         }
                     }
                 }
+                // for(i=0; i<this.quadradosErradosDois.length; i++){
+                //     for (j=0; j<this.letrasRestantesDois.length; j++){
+                //         if (this.letrasRestantesDois[i] == this.letrasRestantesDoChuteDois[j]){
+                //             if (this.numQuadradoDois < 31){
+                //                 quadradoASerAmareladob = document.getElementById(`quadradob${this.quadradosErrados[j]}`)
+                //                 quadradoASerAmareladob.style= 'background: yellow'
+                //             }
+                //             this.letrasRestantesDois.splice(i, '*')
+                //             this.letrasRestantesDoChuteDois.splice(j, '*')
+                //             this.quadradosErradosDois.splice(j, '*')
+                //             break
+                //         }
+                //     }
+                // }
                 
                 //Reset:
                 this.letrasRestantes = []
@@ -107,13 +121,14 @@ var app = new Vue({
             } else if (letra == '⌫' && (this.contadorDeBackspace > 0)){
                 if (this.numQuadrado < 31){
                     quadradoAtual = document.getElementById(`quadrado${this.numQuadrado}`)
+                    quadradoAtual.textContent = ''
                 }
                 if (this.numQuadradoDois < 31){
                     quadradoAtualb = document.getElementById(`quadradob${this.numQuadradoDois}`)
+                    quadradoAtualb.textContent = ''
                 }
-                quadradoAtual.textContent = ''
-                quadradoAtualb.textContent = ''
                 this.chute.pop()
+                this.chuteDois.pop()
                 --this.contadorDeBackspace
                 --this.numQuadrado
                 --this.numQuadradoDois
