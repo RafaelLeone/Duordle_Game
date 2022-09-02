@@ -23,7 +23,7 @@ words = [
     'alter', 
     'among', 
     'anger', 
-    'Angle', 
+    'angle', 
     'angry', 
     'apart', 
     'apple', 
@@ -498,5 +498,8 @@ words = [
     'wrote', 
     'yield', 
     'young', 
-    'youth'
+    'youth',
+    'stunt',
+    'hobby',
+    'zebra',
 ]

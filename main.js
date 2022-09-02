@@ -23,6 +23,7 @@ var app = new Vue({
         contadorDois: 0,
         teclasCertas: [],
         naoTem: false,
+        certo: 'grey 50%',
     },
     methods: {
         tecla(letra){
@@ -168,12 +169,16 @@ var app = new Vue({
             for (indice in letras){
                 tecla = document.getElementById(letras[indice])
                 if(this.palavraDoDia[indice] == letras[indice]){
-                    tecla.style = 'background: green'
+                    this.certo = 'green 50%'
+                    tecla.style =  `background: linear-gradient(90deg, ${this.certo}, grey 50%);`
+                    this.certo = 'grey 50%'
                     this.teclasCertas.push(letras[indice])
                 } else if (this.palavraDoDia.includes(letras[indice]) && !this.teclasCertas.includes(letras[indice])){
-                    tecla.style = 'background: yellow'
+                    this.certo = 'yellow 50%'
+                    tecla.style = `background: linear-gradient(90deg, ${this.certo}, grey 50%);`
+                    this.certo = 'grey 50%'
                 } else if (!this.teclasCertas.includes(letras[indice])){
-                    tecla.style = 'background: grey'
+                    tecla.style = `background: linear-gradient(90deg, ${this.certo}, grey 50%);`
                 }
             }
         }
