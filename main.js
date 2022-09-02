@@ -28,21 +28,19 @@ var app = new Vue({
             if (this.numQuadrado >= 31 && this.numQuadradoDois >= 31){
                 return
             }
-
             // Lógica do ENTER:
             if (letra == 'FENTER' && this.numQuadrado % 5 == 0 && this.numQuadrado > 0 && this.contadorDeBackspace > 0) {
                 ++this.numQuadrado
                 ++this.numQuadradoDois
                 ++this.counter
                 this.contadorDeBackspace = 0
-
                 //Lógica do verde
                 for (i=0; i<5; i++){
-                    if (this.numQuadrado < 31){
+                    if (this.numQuadrado <= 31){
                         quadradoASerValidado = document.getElementById(`quadrado${this.contaQuadradosValidados}`)
                     }
-                    if (this.numQuadradoDois < 31){
-                        quadradoASerValidadob = document.getElementById(`quadradob${this.contaQuadradosValidados}`)
+                    if (this.numQuadradoDois <= 31){
+                        quadradoASerValidadob = document.getElementById(`quadradob${this.contaQuadradosValidadosDois}`)
                     }
                     quadradoASerValidado.style = 'background: grey'
                     quadradoASerValidadob.style = 'background: grey'
@@ -63,12 +61,11 @@ var app = new Vue({
                         this.quadradosErradosDois.push(i+this.contadorDois+1)
                     }
                 }
-
                 //Lógica do amarelo:
                 for(i=0; i<this.quadradosErrados.length; i++){
                     for (j=0; j<this.letrasRestantes.length; j++){
                         if (this.letrasRestantes[i] == this.letrasRestantesDoChute[j]){
-                            if (this.numQuadrado < 31){
+                            if (this.numQuadrado <= 31){
                                 quadradoASerAmarelado = document.getElementById(`quadrado${this.quadradosErrados[j]}`)
                                 quadradoASerAmarelado.style= 'background: yellow'
                             }
@@ -82,7 +79,7 @@ var app = new Vue({
                 for(i=0; i<this.quadradosErradosDois.length; i++){
                     for (j=0; j<this.letrasRestantesDois.length; j++){
                         if (this.letrasRestantesDois[i] == this.letrasRestantesDoChuteDois[j]){
-                            if (this.numQuadradoDois < 31){
+                            if (this.numQuadradoDois <= 31){
                                 quadradoASerAmareladob = document.getElementById(`quadradob${this.quadradosErradosDois[j]}`)
                                 quadradoASerAmareladob.style= 'background: yellow'
                             }
@@ -93,7 +90,6 @@ var app = new Vue({
                         }
                     }
                 }
-                
                 //Reset:
                 this.letrasRestantes = []
                 this.letrasRestantesDoChute = []
@@ -103,9 +99,7 @@ var app = new Vue({
                 this.quadradosErradosDois = []
                 this.contador += 5
                 this.contadorDois += 5
-                
                 this.pintaTecla(this.chute)
-
                 //Lógica do chute:
                 this.chuteFinal = this.chute.join('')
                 if (this.chuteFinal == this.palavraDoDia){
@@ -113,21 +107,19 @@ var app = new Vue({
                 } else {
                     this.chute = []
                 }
-                
                 this.chuteFinalDois = this.chuteDois.join('')
                 if (this.chuteFinalDois == this.palavraDoDiaDois){
                     this.numQuadradoDois = 31
                 } else {
                     this.chuteDois = []
                 }
-
             // Lógica do backspace:
             } else if (letra == '⌫' && (this.contadorDeBackspace > 0)){
-                if (this.numQuadrado < 31){
+                if (this.numQuadrado <= 30){
                     quadradoAtual = document.getElementById(`quadrado${this.numQuadrado}`)
                     quadradoAtual.textContent = ''
                 }
-                if (this.numQuadradoDois < 31){
+                if (this.numQuadradoDois <= 30){
                     quadradoAtualb = document.getElementById(`quadradob${this.numQuadradoDois}`)
                     quadradoAtualb.textContent = ''
                 }
@@ -136,11 +128,9 @@ var app = new Vue({
                 --this.contadorDeBackspace
                 --this.numQuadrado
                 --this.numQuadradoDois
-
             // Lógica pra não colocar mais letra depois da quinta:
             } else if (this.numQuadrado % 5 == 0 && this.numQuadrado > 0 && this.contadorDeBackspace > 0){
                 return
-
             // Lógica das letras:
             } else {
                 if (this.counter > 0){
@@ -153,17 +143,19 @@ var app = new Vue({
                 }
                 ++this.numQuadrado
                 ++this.numQuadradoDois
-                if (this.numQuadrado < 31){
+                if (this.numQuadrado <= 30){
                     quadradoAtual = document.getElementById(`quadrado${this.numQuadrado}`)
                     quadradoAtual.textContent = letra
                 }
-                if (this.numQuadradoDois < 31){
+                if (this.numQuadradoDois <= 30){
                     quadradoAtualb = document.getElementById(`quadradob${this.numQuadradoDois}`)
                     quadradoAtualb.textContent = letra
                 }
                 this.chute.push(letra)
                 this.chuteDois.push(letra)
             }
+            console.log(this.numQuadrado)
+            console.log(this.numQuadradoDois)
         },
         pintaTecla(letras){
             for (indice in letras){
