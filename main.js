@@ -9,8 +9,8 @@ var app = new Vue({
         chuteDois: [],
         chuteFinal: undefined,
         chuteFinalDois: undefined,
-        palavraDoDia: 'OSSOS',
-        palavraDoDiaDois: 'MISSA',
+        palavraDoDia: 'ANGER',
+        palavraDoDiaDois: 'TODAY',
         contaQuadradosValidados: 1,
         contaQuadradosValidadosDois: 1,
         letrasRestantes: [],
@@ -22,14 +22,24 @@ var app = new Vue({
         contador: 0,
         contadorDois: 0,
         teclasCertas: [],
+        naoTem: false,
     },
     methods: {
         tecla(letra){
+            this.naoTem = false
             if (this.numQuadrado >= 31 && this.numQuadradoDois >= 31){
                 return
             }
             // Lógica do ENTER:
             if (letra == 'FENTER' && this.numQuadrado % 5 == 0 && this.numQuadrado > 0 && this.contadorDeBackspace > 0) {
+                if (this.chute.length == 5 || this.chuteDois.length == 5){ 
+                    this.chuteFinal = this.chute.join('')
+                    this.chuteFinalDois = this.chuteDois.join('')
+                    if ((!words.includes(this.chuteFinal.toLowerCase())) && this.chute.length == 5 || (!words.includes(this.chuteFinalDois.toLowerCase())) && this.chuteDois.length == 5){
+                        this.naoTem = true
+                        return
+                    }
+                }
                 ++this.numQuadrado
                 ++this.numQuadradoDois
                 ++this.counter
@@ -101,7 +111,6 @@ var app = new Vue({
                 this.contadorDois += 5
                 this.pintaTecla(this.chute)
                 //Lógica do chute:
-                this.chuteFinal = this.chute.join('')
                 if (this.chuteFinal == this.palavraDoDia){
                     this.numQuadrado = 31
                 } else {

@@ -144,13 +144,6 @@ button {
     margin-left: 97%;
 }
 
-.config-img{
-    width: 27px;
-    z-index: 1;
-    margin-top: 11px;
-    margin-left: 97%;
-}
-
 .bars-img{
     width: 27px;
     z-index: 2;
@@ -205,5 +198,17 @@ button {
 
     #enter{
         width: 48px;
+    }
+
+    .config-img{
+        display: none;
+    }
+    
+    .bars-img{
+        display: none;
+    }
+    
+    .menu-img{
+        display: none;
     }
 }

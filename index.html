@@ -113,8 +113,7 @@
             </div>
         </div>
 
-        <br>
-        <br>
+        <div v-show="naoTem" style="text-align:center"><h2><strong>Not a word in the list</strong></h2></div>
 
             <div class="teclado">
                 <button @click="tecla('Q')" id="Q" class="tecla">Q</button>
@@ -175,6 +174,7 @@
 
         </div>
     </div>
+    <script src="./words.js"></script>
     <script src="./main.js"></script>
 </body>
 </html>
