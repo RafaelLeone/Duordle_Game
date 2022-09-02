@@ -154,8 +154,6 @@ var app = new Vue({
                 this.chute.push(letra)
                 this.chuteDois.push(letra)
             }
-            console.log(this.numQuadrado)
-            console.log(this.numQuadradoDois)
         },
         pintaTecla(letras){
             for (indice in letras){
