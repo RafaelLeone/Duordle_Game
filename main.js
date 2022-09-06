@@ -27,6 +27,7 @@ var app = new Vue({
     },
     methods: {
         tecla(letra){
+            console.log('entrei')
             this.naoTem = false
             if (this.numQuadrado >= 31 && this.numQuadradoDois >= 31){
                 return
@@ -138,6 +139,7 @@ var app = new Vue({
                 --this.contadorDeBackspace
                 --this.numQuadrado
                 --this.numQuadradoDois
+                return
             // Lógica pra não colocar mais letra depois da quinta:
             } else if (this.numQuadrado % 5 == 0 && this.numQuadrado > 0 && this.contadorDeBackspace > 0){
                 return
@@ -187,9 +189,9 @@ var app = new Vue({
         // `this` aponta para a instância
         // Add event listener on keyup
         document.addEventListener('keyup', (event) => {
+            console.log('tecla capturada')
             var name = event.key;
             var code = event.code;
-            // Alert the key name and key code on keydown
             if ("KeyA" <= code && code <= "KeyZ"){
                 this.tecla(name.toUpperCase())
             } else if (code == "Enter" && this.numQuadrado % 5 == 0 && this.numQuadrado > 0 && this.contadorDeBackspace > 0){
