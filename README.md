@@ -1,3 +1,3 @@
 ## Jogue Duordle:
 
-[Link](https://rafaelleone.github.io/duordle/)
+[Link](https://rafaelleone.github.io/Duordle_Game/)
